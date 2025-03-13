@@ -32,6 +32,16 @@ function set_up_simulink_run(Model, stage)
             active_scenario = "Path";
         end
         set_param(block_path, 'ActiveScenario', active_scenario);
+    elseif Model.model_name == "Simu2Vita_ROV"
+        % block_path = Model.files.model_fname_ctrl + "/Reference Signal Builder";
+        % if Model.msframework.ref_type == "step" && stage == 1
+        %     active_scenario = "Step1";
+        % elseif Model.msframework.ref_type == "step" && stage == 2
+        %     active_scenario = "Step2";
+        % elseif Model.msframework.ref_type == "path"
+        %     active_scenario = "Path";
+        % end
+        % set_param(block_path, 'ActiveScenario', active_scenario);
     end
 end
 

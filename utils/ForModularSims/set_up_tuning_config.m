@@ -6,6 +6,9 @@ function [Config] = set_up_tuning_config(model_name, stages, params)
         Config.model_name = model_name; 
     elseif extractBefore(model_name, 9) == "Hagglund"
         Config = tuning_config_hagglund(model_name, stages, params);
+    elseif model_name == "Simu2Vita_ROV"
+        Config = tuning_config_simu2vita(stages, params);
+        Config.model_name = model_name; 
     end
 end
 

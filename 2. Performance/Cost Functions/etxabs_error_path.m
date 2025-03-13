@@ -1,4 +1,4 @@
-function error = etxabs_error_path(sim_out, path_info, verbose)
+function error = etxabs_error_path(sim_out, reference_mask, verbose)
 % ABS_ERROR_PATH Calculates absolute error for a path following task.
 %
 %   Parameters:
@@ -18,7 +18,7 @@ function error = etxabs_error_path(sim_out, path_info, verbose)
     rpy_data = sim_out.orientation_deg.Data;
     path_time = sim_out.ref_path.Time;
     path_data = sim_out.ref_path.Data;
-    ref_mask = logical(path_info.reference_mask);
+    ref_mask = logical(reference_mask);
     
     traj_data = [pos_data rpy_data];
    
